@@ -1,0 +1,8 @@
+res://default_bus_layout.tres
+res://src/main_avre.tscn
+res://openxr_action_map.tres
+res://addons/ateneo-virtual-reality-escape/object-interaction-system/misc-resources/collider_raycast_mesh.tres
+res://addons/godot-xr-tools/hands/animations/left/hand_blend_tree.tres
+res://addons/godot-xr-tools/hands/animations/right/hand_blend_tree.tres
+res://addons/ve-teleporter/PanoramaSphereMeshBase.tres
+res://addons/ve-teleporter/Panorama.gd

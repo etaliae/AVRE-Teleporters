@@ -1,0 +1,161 @@
+[gd_scene load_steps=22 format=3 uid="uid://bq5vkafh6ugil"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_rcoxa"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_lioh3"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_418d6"]
+[ext_resource type="PackedScene" uid="uid://cotuxobe0pvmk" path="res://src/assets/flashlight_with_crank_body.glb" id="4_ni2r8"]
+[ext_resource type="PackedScene" uid="uid://cddvf2lujisxi" path="res://src/assets/flashlight_with_crank_crankpart.glb" id="5_05883"]
+[ext_resource type="Script" uid="uid://dalekgkl6pvpt" path="res://src/ois-objects/crank.gd" id="5_r2to1"]
+[ext_resource type="Script" uid="uid://blykl6ecn286o" path="res://addons/ateneo-virtual-reality-escape/object-interaction-system/ois-receiver/ois_crank_receiver.gd" id="6_ru1nx"]
+[ext_resource type="PackedScene" uid="uid://bddj5m7ull6g0" path="res://addons/godot-xr-tools/interactables/interactable_handle.tscn" id="7_onihh"]
+[ext_resource type="Script" uid="uid://cg1lorgur84yy" path="res://addons/ateneo-virtual-reality-escape/object-interaction-system/ois-actor/ois_actor_component.gd" id="8_dwkks"]
+[ext_resource type="Script" uid="uid://cgettxdui2mmi" path="res://addons/ateneo-virtual-reality-escape/object-interaction-system/ois-state-machine/ois_one_hand_tool_asm.gd" id="9_fpjcg"]
+[ext_resource type="PackedScene" uid="uid://ca3daqmpo0tua" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_redirect.tscn" id="10_730ad"]
+[ext_resource type="Script" uid="uid://b4ao0gdf7khuq" path="res://addons/ateneo-virtual-reality-escape/object-interaction-system/ois-colliders/ois_collider_area3d.gd" id="10_twjmf"]
+[ext_resource type="AudioStream" uid="uid://bdykjqiddqup6" path="res://src/audio/03 - Jingle - Missing Pieces vocal vers.ogg" id="13_g8vbb"]
+[ext_resource type="Script" uid="uid://b3o3p00qk0pri" path="res://src/other/flashlight_functionality.gd" id="14_ibt7x"]
+[ext_resource type="Script" uid="uid://dq86gvhe6d20d" path="res://addons/ateneo-virtual-reality-escape/inventory-system/inventory_item.gd" id="15_0bilh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4w2s4"]
+size = Vector3(0.05, 0.0861694, 0.183)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r6gow"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gro8u"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ypv2i"]
+height = 0.0822323
+radius = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mrwcr"]
+radius = 0.05
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l2dxu"]
+radius = 0.1
+
+[node name="OISFlashlightRadio" instance=ExtResource("1_rcoxa")]
+collision_mask = 5439495
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0202697, 0.0229492)
+shape = SubResource("BoxShape3D_4w2s4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0185307, -0.0383462)
+visible = false
+spot_range = 3.5817
+spot_angle = 16.3945
+
+[node name="GrabPointHandLeft" parent="." index="2" instance=ExtResource("2_lioh3")]
+transform = Transform3D(1, 0, 0, 0, 0.701395, 0.712773, 0, -0.712773, 0.701395, 0, -0.0278694, -0.0516991)
+visible = true
+
+[node name="GrabPointHandRight" parent="." index="3" instance=ExtResource("3_418d6")]
+transform = Transform3D(-1, -8.74228e-08, -1.77631e-15, 5.98217e-08, -0.68428, -0.729219, 6.37504e-08, -0.729219, 0.68428, 0, 0.0734613, -0.0505992)
+
+[node name="flashlight_with_crank_body" parent="." index="4" instance=ExtResource("4_ni2r8")]
+transform = Transform3D(-0.2, 0, 3.01992e-08, 0, 0.2, 0, -3.01992e-08, 0, -0.2, -0.0102881, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="flashlight_with_crank_body" index="0"]
+transform = Transform3D(9.73537e-07, 0, -5, 0, 5, 0, 5, 0, 9.73537e-07, 0.057807, 0.092535, -0.264449)
+stream = ExtResource("13_g8vbb")
+max_distance = 5.0
+bus = &"FlashlightRadioCrankBus"
+emission_angle_enabled = true
+emission_angle_degrees = 60.0
+emission_angle_filter_attenuation_db = -14.0
+doppler_tracking = 2
+
+[node name="FlashlightFunctionality" type="Node3D" parent="flashlight_with_crank_body" index="2"]
+transform = Transform3D(-5, 0, -7.5498e-07, 0, 5, 0, 7.5498e-07, 0, -5, -0.0514405, 0, 7.76731e-09)
+script = ExtResource("14_ibt7x")
+
+[node name="WhiteFlash" type="MeshInstance3D" parent="flashlight_with_crank_body/FlashlightFunctionality" index="0"]
+transform = Transform3D(-0.007, -1.50996e-09, 1.65006e-16, 0, -4.37114e-10, -0.025, 1.05697e-09, -0.01, 1.09278e-09, -0.00125676, 0.0211798, -0.0491674)
+mesh = SubResource("PlaneMesh_r6gow")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gro8u")
+
+[node name="SpotLight" type="SpotLight3D" parent="flashlight_with_crank_body/FlashlightFunctionality" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0217644, -0.0522974)
+light_color = Color(0.963682, 0.814348, 0.58784, 1)
+light_energy = 3.0
+shadow_enabled = true
+spot_angle = 30.0
+
+[node name="OISCrankReceiver" type="Node3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0229454, 0.0220217)
+script = ExtResource("6_ru1nx")
+single_direction = true
+group = "flashlight_crank"
+requirement = 3.0
+reset_progress = true
+
+[node name="Area3D" type="Area3D" parent="OISCrankReceiver" index="0"]
+collision_layer = 536870912
+collision_mask = 536870912
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OISCrankReceiver/Area3D" index="0"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0296494, 0, 0)
+shape = SubResource("CylinderShape3D_ypv2i")
+
+[node name="CrankRotationPoint" type="Marker3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0218581, 0.0224094)
+script = ExtResource("5_r2to1")
+axis = Vector3(1, 0, 0)
+
+[node name="flashlight_with_crank_crankpart" parent="CrankRotationPoint" index="0" instance=ExtResource("5_05883")]
+transform = Transform3D(-0.2, -3.0571e-15, -1.74846e-08, 0, 0.2, -3.49691e-08, 1.74846e-08, -3.49691e-08, -0.2, -0.005, -0.018, -0.019)
+
+[node name="Hand" type="Marker3D" parent="CrankRotationPoint" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376776, 0.0984734, 0.0926505)
+
+[node name="GrabPointHandRight" parent="CrankRotationPoint/Hand" index="0" instance=ExtResource("3_418d6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00256604, 0.0281189, -0.0932091)
+
+[node name="Crank" type="Node3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0276712, 0.0997361, 0.106026)
+
+[node name="InteractableHandle" parent="Crank" index="0" instance=ExtResource("7_onihh")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crank/InteractableHandle" index="0"]
+shape = SubResource("SphereShape3D_mrwcr")
+
+[node name="GrabPointRedirect" parent="Crank/InteractableHandle" index="1" node_paths=PackedStringArray("target") instance=ExtResource("10_730ad")]
+target = NodePath("../../../CrankRotationPoint/Hand/GrabPointHandRight")
+
+[node name="OISActorComponent" type="Node3D" parent="Crank/InteractableHandle" index="2"]
+script = ExtResource("8_dwkks")
+receiver_group = "flashlight_crank"
+
+[node name="OISOneHandToolASM" type="Node3D" parent="Crank/InteractableHandle/OISActorComponent" index="0"]
+script = ExtResource("9_fpjcg")
+
+[node name="OISColliderArea3D" type="Node3D" parent="Crank/InteractableHandle/OISActorComponent" index="1"]
+script = ExtResource("10_twjmf")
+
+[node name="Area3D" type="Area3D" parent="Crank/InteractableHandle/OISActorComponent/OISColliderArea3D" index="0"]
+collision_layer = 536870912
+collision_mask = 536870912
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crank/InteractableHandle/OISActorComponent/OISColliderArea3D/Area3D" index="0"]
+shape = SubResource("SphereShape3D_l2dxu")
+
+[node name="InventoryItem" type="Node3D" parent="." index="8" node_paths=PackedStringArray("defined_mesh", "defined_collision_shape", "additional_mesh")]
+script = ExtResource("15_0bilh")
+unique = true
+defined_mesh = NodePath("../flashlight_with_crank_body")
+defined_collision_shape = NodePath("../CollisionShape3D")
+preferred_scale = 0.6
+object_transform_adjustment = Vector3(-0.02, -0.025, 0)
+object_rotation_adjustment = Vector3(0, -90, 0)
+additional_mesh = NodePath("../CrankRotationPoint/flashlight_with_crank_crankpart")
+
+[connection signal="action_completed" from="OISCrankReceiver" to="CrankRotationPoint" method="_on_ois_crank_receiver_action_completed"]
+[connection signal="action_ended" from="OISCrankReceiver" to="flashlight_with_crank_body/FlashlightFunctionality" method="_on_ois_crank_receiver_action_ended"]
+[connection signal="action_ended" from="OISCrankReceiver" to="CrankRotationPoint" method="_on_ois_crank_receiver_action_ended"]
+[connection signal="action_in_progress" from="OISCrankReceiver" to="flashlight_with_crank_body/FlashlightFunctionality" method="_on_ois_crank_receiver_action_in_progress"]
+[connection signal="action_in_progress" from="OISCrankReceiver" to="CrankRotationPoint" method="_on_ois_crank_receiver_action_in_progress"]

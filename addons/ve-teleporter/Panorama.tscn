@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dul254otipy5m"]
+
+[ext_resource type="Script" uid="uid://4a6qrghv33hm" path="res://addons/ve-teleporter/Panorama.gd" id="1_prwr5"]
+[ext_resource type="SphereMesh" uid="uid://dpeh5ksm83jbm" path="res://addons/ve-teleporter/PanoramaSphereMeshBase.tres" id="2_inft4"]
+
+[node name="Panorama" type="Node3D"]
+transform = Transform3D(0.999987, 0, 0, 0, 1, 0, 0, 0, 0.999987, 0, 0, 0)
+top_level = true
+script = ExtResource("1_prwr5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+gi_mode = 0
+mesh = ExtResource("2_inft4")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 3.015
+omni_range = 16.12
+
+[node name="Teleporters" type="Node3D" parent="."]
