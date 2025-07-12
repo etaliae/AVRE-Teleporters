@@ -60,11 +60,10 @@ func _ready() -> void:
 			teleport_called = false
 			initial_teleport = false
 		_connect_controller_buttons()
-				
+	
+	teleporters = get_tree().get_nodes_in_group("Teleporters")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	teleporters = get_tree().get_nodes_in_group("Teleporters")
-	
 	if Engine.is_editor_hint():
 		if update_connections:
 			for teleporter in teleporters:
