@@ -46,6 +46,7 @@ signal location_changed(location_name)
 var teleport_called : bool
 var initial_teleport : bool
 
+var teleporters: Array[Node]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -62,10 +63,12 @@ func _ready() -> void:
 				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	teleporters = get_tree().get_nodes_in_group("Teleporters")
+	
 	if Engine.is_editor_hint():
 		if update_connections:
-			for teleporters in $Teleporters.get_children():
-				teleporters._update_connections()
+			for teleporter in teleporters:
+				teleporter._update_connections()
 			print("[AVRE - TeleportManager] Updated connections on all teleporters.")
 			update_connections = false
 	_set_teleporter_states()
@@ -80,7 +83,7 @@ func _process(delta: float) -> void:
 func _set_teleporter_states() -> void: #set which teleporters are enabled or not
 	if enabled: 
 		if is_instance_valid(current_location):
-			for teleporters_a in $Teleporters.get_children():
+			for teleporters_a in teleporters:
 				if teleporters_a == current_location:
 					teleporters_a.current_teleporter = true
 				else:
@@ -90,8 +93,8 @@ func _set_teleporter_states() -> void: #set which teleporters are enabled or not
 				elif teleporters_a == current_location or teleporters_a in current_location.connected_teleporters and teleporters_a.teleporter_active:
 					teleporters_a.teleporter_enabled = true
 	else:
-		for teleporters in $Teleporters.get_children():
-			teleporters.teleporter_enabled = false
+		for teleporter in teleporters:
+			teleporter.teleporter_enabled = false
 
 func _teleport_player(location : Teleporter) -> void:
 	# Still unsure about this, will have to confirm later, but it works as expected.

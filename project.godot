@@ -29,6 +29,7 @@ enabled=PackedStringArray("res://addons/ateneo-virtual-reality-escape/plugin.cfg
 
 hand=""
 Objects=""
+Teleporters="Group of teleporters"
 
 [input]
 
