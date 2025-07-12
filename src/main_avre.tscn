@@ -820,8 +820,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_2sbol")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CubeBoxTable3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_acimi")
 
-[node name="TeleporterManager" type="Node3D" parent="." node_paths=PackedStringArray("xr_origin", "xr_camera", "xr_left_function_pointer", "xr_right_function_pointer", "fade_mesh", "spectator_camera")]
+[node name="TeleporterManager" type="Node3D" parent="." node_paths=PackedStringArray("current_location", "xr_origin", "xr_camera", "xr_left_function_pointer", "xr_right_function_pointer", "fade_mesh", "spectator_camera")]
 script = ExtResource("6_cdv65")
+current_location = NodePath("Start")
 enabled = true
 xr_origin = NodePath("../XRPlayer/XRViewport/XROrigin3D")
 xr_camera = NodePath("../XRPlayer/XRViewport/XROrigin3D/XRCamera3D")

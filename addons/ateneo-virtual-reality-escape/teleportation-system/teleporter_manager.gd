@@ -64,7 +64,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		if update_connections:
-			for teleporters in get_children():
+			for teleporters in $Teleporters.get_children():
 				teleporters._update_connections()
 			print("[AVRE - TeleportManager] Updated connections on all teleporters.")
 			update_connections = false
@@ -77,10 +77,10 @@ func _process(delta: float) -> void:
 	if not Engine.is_editor_hint():
 		_runtime_pointer()
 	
-func _set_teleporter_states() -> void:
-	if enabled:
+func _set_teleporter_states() -> void: #set which teleporters are enabled or not
+	if enabled: 
 		if is_instance_valid(current_location):
-			for teleporters_a in self.get_children():
+			for teleporters_a in $Teleporters.get_children():
 				if teleporters_a == current_location:
 					teleporters_a.current_teleporter = true
 				else:
@@ -90,7 +90,7 @@ func _set_teleporter_states() -> void:
 				elif teleporters_a == current_location or teleporters_a in current_location.connected_teleporters and teleporters_a.teleporter_active:
 					teleporters_a.teleporter_enabled = true
 	else:
-		for teleporters in self.get_children():
+		for teleporters in $Teleporters.get_children():
 			teleporters.teleporter_enabled = false
 
 func _teleport_player(location : Teleporter) -> void:

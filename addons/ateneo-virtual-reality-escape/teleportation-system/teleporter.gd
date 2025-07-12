@@ -114,8 +114,8 @@ func _update_connections() -> void:
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings := PackedStringArray()
 	
-	if get_parent().name != "TeleporterManager":
-		warnings.append("This Teleporter is not a child of a TeleporterManager. Please ensure that this teleporter is a child of a TeleporterManager.")
+	#if get_parent().name != "TeleporterManager":
+	#	warnings.append("This Teleporter is not a child of a TeleporterManager. Please ensure that this teleporter is a child of a TeleporterManager.")
 	
 	if self.name == "Teleporter" or teleporter_name == "":
 		warnings.append("This Teleporter does not have a name set. Please set a name for this teleporter.")
