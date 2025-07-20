@@ -13,6 +13,8 @@ extends Node3D
 @export var teleporter_position : Vector3
 @export var teleporter_rotation : Vector3
 @export var connected_teleporters : Array[Teleporter]
+@export var leads_to_new_scene : bool = false
+@export var new_scene : Panorama
 
 
 # Not relative to the teleporter's position! This is global!

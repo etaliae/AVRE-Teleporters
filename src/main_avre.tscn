@@ -11,7 +11,6 @@
 [ext_resource type="Material" uid="uid://dy43ogh4jhnpk" path="res://addons/ateneo-virtual-reality-escape/inventory-system/misc-resources/inventory_slot_shader_a.tres" id="5_uf4kj"]
 [ext_resource type="Script" uid="uid://cji1tdhhvihrj" path="res://addons/ateneo-virtual-reality-escape/object-interaction-system/ois-state-machine/ois_single_controller_asm.gd" id="6_1lrhq"]
 [ext_resource type="Script" uid="uid://cxy8oxoldmaoc" path="res://addons/ateneo-virtual-reality-escape/teleportation-system/teleporter_manager.gd" id="6_cdv65"]
-[ext_resource type="Script" uid="uid://ek4xpaefjlux" path="res://addons/ateneo-virtual-reality-escape/teleportation-system/teleporter.gd" id="7_dx3oy"]
 [ext_resource type="Script" uid="uid://b4ao0gdf7khuq" path="res://addons/ateneo-virtual-reality-escape/object-interaction-system/ois-colliders/ois_collider_area3d.gd" id="7_lya6d"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="8_5f6uf"]
 [ext_resource type="PackedScene" uid="uid://clr8xwi6ickp4" path="res://src/ois-objects/ois_rag.tscn" id="8_be46h"]
@@ -23,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b4mr5nojepu4p" path="res://src/ois-objects/ois_screw.tscn" id="14_8owp6"]
 [ext_resource type="PackedScene" uid="uid://u3gyg1us25m7" path="res://src/ois-objects/ois_baston.tscn" id="15_xqurx"]
 [ext_resource type="PackedScene" uid="uid://dms7o4a7kk3tx" path="res://src/ois-objects/ois_bowstaff.tscn" id="16_oiwo4"]
+[ext_resource type="Script" uid="uid://dwpn6phxfx3k8" path="res://addons/ateneo-virtual-reality-escape/teleportation-system/teleporter.gd" id="17_4mggj"]
 [ext_resource type="PackedScene" uid="uid://bq5vkafh6ugil" path="res://src/ois-objects/ois_flashlight_radio.tscn" id="17_d1f0w"]
 [ext_resource type="PackedScene" uid="uid://c0j326kjol0so" path="res://src/assets/painting.tscn" id="19_8owp6"]
 
@@ -833,108 +833,121 @@ spectator_camera = NodePath("../DesktopViewContainer/DesktopViewport/SpectatorCa
 metadata/_custom_type_script = "uid://cxy8oxoldmaoc"
 
 [node name="Start" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "Start"
 connected_teleporters = [NodePath("../TeleporterSystem"), NodePath("../Inventory"), NodePath("../OIS")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="TeleporterSystem" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "TeleporterSystem"
 teleporter_enabled = true
 teleporter_position = Vector3(0, 0, -5)
 connected_teleporters = [NodePath("../TPDemo1"), NodePath("../Start")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="TPDemo1" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "TPDemo1"
 teleporter_position = Vector3(0, 0, -9)
 connected_teleporters = [NodePath("../TeleporterSystem"), NodePath("../TPDemo2")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="TPDemo2" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -12)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "TPDemo2"
 teleporter_position = Vector3(-2.5, 0, -12)
 connected_teleporters = [NodePath("../TPDemo4"), NodePath("../TPDemo1")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="TPDemo3" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -12)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "TPDemo3"
 teleporter_position = Vector3(2.5, 0, -12)
 connected_teleporters = [NodePath("../TPDemo4")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="TPDemo4" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "TPDemo4"
 teleporter_position = Vector3(0, 0, -15)
 connected_teleporters = [NodePath("../TPDemo3"), NodePath("../TPDemo2")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="OIS" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "OIS"
 teleporter_enabled = true
 teleporter_position = Vector3(5, 0, 0)
 connected_teleporters = [NodePath("../Start"), NodePath("../OIS-1"), NodePath("../OIS-2"), NodePath("../OIS-3"), NodePath("../OIS-4"), NodePath("../OIS-5")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="OIS-1" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -3)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "OIS-1"
 teleporter_position = Vector3(10, 0, -3)
 connected_teleporters = [NodePath("../OIS"), NodePath("../OIS-2"), NodePath("../OIS-3"), NodePath("../OIS-4"), NodePath("../OIS-5")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="OIS-2" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 3)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "OIS-2"
 teleporter_position = Vector3(10, 0, 3)
 connected_teleporters = [NodePath("../OIS"), NodePath("../OIS-1"), NodePath("../OIS-3"), NodePath("../OIS-4"), NodePath("../OIS-5")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="OIS-3" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -3)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "OIS-3"
 teleporter_position = Vector3(15, 0, -3)
 connected_teleporters = [NodePath("../OIS"), NodePath("../OIS-1"), NodePath("../OIS-2"), NodePath("../OIS-4"), NodePath("../OIS-5")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="OIS-4" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 3)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "OIS-4"
 teleporter_position = Vector3(15, 0, 3)
 connected_teleporters = [NodePath("../OIS"), NodePath("../OIS-1"), NodePath("../OIS-2"), NodePath("../OIS-3"), NodePath("../OIS-5")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="OIS-5" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5672, 0, 0.0326228)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "OIS-5"
 teleporter_position = Vector3(17.5672, 0, 0.0326228)
 connected_teleporters = [NodePath("../OIS"), NodePath("../OIS-1"), NodePath("../OIS-2"), NodePath("../OIS-3"), NodePath("../OIS-4")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="Inventory" type="Node3D" parent="TeleporterManager" node_paths=PackedStringArray("connected_teleporters")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-script = ExtResource("7_dx3oy")
+script = ExtResource("17_4mggj")
 teleporter_name = "Inventory"
 teleporter_enabled = true
 teleporter_position = Vector3(-5, 0, 0)
 connected_teleporters = [NodePath("../Start")]
+leads_to_new_scene = null
 metadata/_custom_type_script = "uid://ek4xpaefjlux"
 
 [node name="FadeMesh" parent="." instance=ExtResource("11_uf4kj")]

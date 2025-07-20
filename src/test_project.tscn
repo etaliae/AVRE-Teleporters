@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bq5vkafh6ugil" path="res://src/ois-objects/ois_flashlight_radio.tscn" id="23_ibnp3"]
 [ext_resource type="PackedScene" uid="uid://u3gyg1us25m7" path="res://src/ois-objects/ois_baston.tscn" id="23_s7jea"]
 [ext_resource type="Script" uid="uid://cxy8oxoldmaoc" path="res://addons/ateneo-virtual-reality-escape/teleportation-system/teleporter_manager.gd" id="24_bpliu"]
-[ext_resource type="Script" uid="uid://ek4xpaefjlux" path="res://addons/ateneo-virtual-reality-escape/teleportation-system/teleporter.gd" id="24_ypn6r"]
+[ext_resource type="Script" uid="uid://ek4xpaefjlux" path="res://addons/ateneo-virtual-reality-escape/teleportation-system/teleporter_scene.gd" id="24_ypn6r"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2iixv"]
 
