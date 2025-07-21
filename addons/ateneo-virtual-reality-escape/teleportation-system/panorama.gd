@@ -2,6 +2,8 @@
 class_name Panorama
 extends Node3D
 
+@onready var mesh_instance: MeshInstance3D = $MeshInstance3D
+
 @export_file var image_filename: String
 
 @export_category("Panorama Rotation")
@@ -9,8 +11,6 @@ extends Node3D
 @export_range(0, 360, 0.01, "degrees") var rotation_y: float
 @export_range(0, 360, 0.01, "degrees") var rotation_z: float
 @export var update_mesh : bool = false
-
-var mesh_instance := MeshInstance3D.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,10 +21,7 @@ func _ready():
 	image.flip_x()
 	var texture_panorama = ImageTexture.create_from_image(image)
 	((mesh_instance.mesh as SphereMesh).material as StandardMaterial3D).albedo_texture = texture_panorama
-	mesh_instance.scale = Vector3(10, 10, 10)
 	
-	add_child(mesh_instance)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Engine.is_editor_hint():

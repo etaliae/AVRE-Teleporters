@@ -1,11 +1,12 @@
 res://src/teleporter_test.tscn
 res://openxr_action_map.tres
+res://addons/ateneo-virtual-reality-escape/teleportation-system/misc-resources/PanoramaSphereMeshBase.tres
 res://addons/godot-xr-tools/hands/animations/left/hand_blend_tree.tres
 res://addons/godot-xr-tools/hands/animations/right/hand_blend_tree.tres
-res://addons/ateneo-virtual-reality-escape/teleportation-system/misc-resources/PanoramaSphereMeshBase.tres
 res://addons/ateneo-virtual-reality-escape/teleportation-system/teleporter.gd
-res://addons/ateneo-virtual-reality-escape/teleportation-system/panorama.gd
+res://addons/ateneo-virtual-reality-escape/teleportation-system/teleporter_manager.gd
 res://src/test_main.tscn
 res://src/main_avre.tscn
 res://src/ois-objects/ois_hammer.tscn
 res://src/ois-objects/ois_rag.tscn
+res://addons/ateneo-virtual-reality-escape/teleportation-system/panorama.gd

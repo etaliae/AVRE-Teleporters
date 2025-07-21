@@ -13,10 +13,14 @@ extends Node3D
 @export var teleporter_position : Vector3
 @export var teleporter_rotation : Vector3
 @export var connected_teleporters : Array[Teleporter]
-@export var leads_to_new_scene : bool = false
+
+@export_category("Load New Scene")
+@export var loads_new_scene: bool = false
 @export var new_scene : Panorama
+@export var new_teleporter : Teleporter
+@export var update_connections : bool = false
 
-
+@export_category("Spectator Camera")
 # Not relative to the teleporter's position! This is global!
 @export var spectator_camera_position : Vector3
 @export var spectator_camera_rotation : Vector3
@@ -38,6 +42,8 @@ var teleporter_material_override = StandardMaterial3D.new()
 var current_teleporter : bool
 var aimed_at : bool
 
+signal new_scene_teleporter
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_set_up_teleporter_mesh()
@@ -56,6 +62,10 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		teleporter_position = self.position
 		teleporter_rotation = self.rotation_degrees
+		
+		if update_connections:
+			emit_signal("new_scene_teleporter")
+			update_connections = false
 	
 	_update_teleporter_state()
 
@@ -114,6 +124,11 @@ func _update_connections() -> void:
 		for teleporters in connected_teleporters:
 			if !teleporters.connected_teleporters.has(self):
 				teleporters.connected_teleporters.append(self)
+				
+		if loads_new_scene:
+			new_teleporter.loads_new_scene = true
+			new_teleporter.new_scene = get_parent().get_parent()
+			new_teleporter.new_teleporter = self
 
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings := PackedStringArray()
@@ -126,6 +141,9 @@ func _get_configuration_warnings() -> PackedStringArray:
 		
 	if connected_teleporters.size() < 1:
 		warnings.append("This Teleporter is not connected to any other teleporter.")
+		
+	if new_teleporter != null and !(new_teleporter in connected_teleporters):
+		warnings.append("Teleporter to teleport to in new scene must be in connected teleporters.")
 
 	# Return warnings
 	return warnings

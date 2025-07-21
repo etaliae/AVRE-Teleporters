@@ -8,6 +8,11 @@ signal location_changed(location_name)
 	set(current_loc):
 		if current_location != current_loc:
 			current_location = current_loc
+			
+@export var current_scene : Panorama:
+	set(current_sc):
+		if current_scene != current_sc:
+			current_scene = current_sc
 
 @export var enabled : bool = false
 
@@ -46,7 +51,8 @@ signal location_changed(location_name)
 var teleport_called : bool
 var initial_teleport : bool
 
-var teleporters: Array[Node]
+var teleporters : Array[Node]
+var scenes : Array[Node]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -62,22 +68,43 @@ func _ready() -> void:
 		_connect_controller_buttons()
 	
 	teleporters = get_tree().get_nodes_in_group("Teleporters")
+	for teleporter in teleporters:
+		teleporter.connect("new_scene_teleporter", _update_teleporters)
+		
+	scenes = get_children()
+	for scene in scenes:
+		remove_child(scene)
+		
+	add_child(current_scene)
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		if update_connections:
-			for teleporter in teleporters:
-				teleporter._update_connections()
-			print("[AVRE - TeleportManager] Updated connections on all teleporters.")
+			_update_teleporters()
 			update_connections = false
 	_set_teleporter_states()
 	
 	if teleport_called and is_instance_valid(pointing_at):
-		_teleport_player(pointing_at)
+		if pointing_at.loads_new_scene:
+			_change_scene()
+		else:
+			_teleport_player(pointing_at)
 		teleport_called = false
 	
 	if not Engine.is_editor_hint():
 		_runtime_pointer()
+	
+func _change_scene() -> void:
+	add_child(pointing_at.new_scene)
+	_teleport_player(pointing_at.new_teleporter)
+	remove_child(current_location.new_scene)
+	
+func _update_teleporters():
+	for teleporter in teleporters:
+		teleporter._update_connections()
+	print("[AVRE - TeleportManager] Updated connections on all teleporters.")
+	
 	
 func _set_teleporter_states() -> void: #set which teleporters are enabled or not
 	if enabled: 
