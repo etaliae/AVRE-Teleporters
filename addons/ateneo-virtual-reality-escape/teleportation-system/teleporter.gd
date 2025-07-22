@@ -52,7 +52,7 @@ func _ready() -> void:
 		teleporter_name = self.name
 	
 	if not Engine.is_editor_hint():	
-		teleporter_position = self.position
+		teleporter_position = self.global_position
 		teleporter_rotation = self.rotation_degrees
 		
 	add_to_group("Teleporters")
@@ -60,7 +60,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
-		teleporter_position = self.position
+		teleporter_position = self.global_position
 		teleporter_rotation = self.rotation_degrees
 		
 		if update_connections:

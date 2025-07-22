@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b1jpveycsb8ia"]
+[gd_scene load_steps=43 format=3 uid="uid://b1jpveycsb8ia"]
 
 [ext_resource type="Script" uid="uid://b3gmvl6jgl8k7" path="res://src/main_avre.gd" id="1_7i2n1"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_g66jk"]
@@ -77,44 +77,48 @@ radius = 0.0949829
 [sub_resource type="SphereShape3D" id="SphereShape3D_ngfnh"]
 radius = 0.0949829
 
-[sub_resource type="BoxMesh" id="BoxMesh_0kucg"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sbol"]
-albedo_color = Color(0.125911, 0.125911, 0.125911, 1)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_acimi"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_f7rct"]
+[sub_resource type="BoxMesh" id="BoxMesh_3dfh6"]
 size = Vector3(0.305, 2.665, 1.885)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_be46h"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tel5a"]
+albedo_color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_21vr3"]
 data = PackedVector3Array(-0.1525, 1.3325, 0.9425, 0.1525, 1.3325, 0.9425, -0.1525, -1.3325, 0.9425, 0.1525, 1.3325, 0.9425, 0.1525, -1.3325, 0.9425, -0.1525, -1.3325, 0.9425, 0.1525, 1.3325, -0.9425, -0.1525, 1.3325, -0.9425, 0.1525, -1.3325, -0.9425, -0.1525, 1.3325, -0.9425, -0.1525, -1.3325, -0.9425, 0.1525, -1.3325, -0.9425, 0.1525, 1.3325, 0.9425, 0.1525, 1.3325, -0.9425, 0.1525, -1.3325, 0.9425, 0.1525, 1.3325, -0.9425, 0.1525, -1.3325, -0.9425, 0.1525, -1.3325, 0.9425, -0.1525, 1.3325, -0.9425, -0.1525, 1.3325, 0.9425, -0.1525, -1.3325, -0.9425, -0.1525, 1.3325, 0.9425, -0.1525, -1.3325, 0.9425, -0.1525, -1.3325, -0.9425, 0.1525, 1.3325, 0.9425, -0.1525, 1.3325, 0.9425, 0.1525, 1.3325, -0.9425, -0.1525, 1.3325, 0.9425, -0.1525, 1.3325, -0.9425, 0.1525, 1.3325, -0.9425, -0.1525, -1.3325, 0.9425, 0.1525, -1.3325, 0.9425, -0.1525, -1.3325, -0.9425, 0.1525, -1.3325, 0.9425, 0.1525, -1.3325, -0.9425, -0.1525, -1.3325, -0.9425)
 
-[sub_resource type="BoxMesh" id="BoxMesh_uf4kj"]
+[sub_resource type="BoxMesh" id="BoxMesh_hcb1o"]
 size = Vector3(0.5, 2.665, 4)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uf4kj"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x01a6"]
 data = PackedVector3Array(-0.25, 1.3325, 2.11, 0.25, 1.3325, 2.11, -0.25, -1.3325, 2.11, 0.25, 1.3325, 2.11, 0.25, -1.3325, 2.11, -0.25, -1.3325, 2.11, 0.25, 1.3325, -2.11, -0.25, 1.3325, -2.11, 0.25, -1.3325, -2.11, -0.25, 1.3325, -2.11, -0.25, -1.3325, -2.11, 0.25, -1.3325, -2.11, 0.25, 1.3325, 2.11, 0.25, 1.3325, -2.11, 0.25, -1.3325, 2.11, 0.25, 1.3325, -2.11, 0.25, -1.3325, -2.11, 0.25, -1.3325, 2.11, -0.25, 1.3325, -2.11, -0.25, 1.3325, 2.11, -0.25, -1.3325, -2.11, -0.25, 1.3325, 2.11, -0.25, -1.3325, 2.11, -0.25, -1.3325, -2.11, 0.25, 1.3325, 2.11, -0.25, 1.3325, 2.11, 0.25, 1.3325, -2.11, -0.25, 1.3325, 2.11, -0.25, 1.3325, -2.11, 0.25, 1.3325, -2.11, -0.25, -1.3325, 2.11, 0.25, -1.3325, 2.11, -0.25, -1.3325, -2.11, 0.25, -1.3325, 2.11, 0.25, -1.3325, -2.11, -0.25, -1.3325, -2.11)
 
-[sub_resource type="BoxMesh" id="BoxMesh_2kfex"]
-size = Vector3(0.5, 2.665, 2.37)
+[sub_resource type="BoxMesh" id="BoxMesh_ssbh5"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cdv65"]
-data = PackedVector3Array(-0.25, 1.3325, 1.185, 0.25, 1.3325, 1.185, -0.25, -1.3325, 1.185, 0.25, 1.3325, 1.185, 0.25, -1.3325, 1.185, -0.25, -1.3325, 1.185, 0.25, 1.3325, -1.185, -0.25, 1.3325, -1.185, 0.25, -1.3325, -1.185, -0.25, 1.3325, -1.185, -0.25, -1.3325, -1.185, 0.25, -1.3325, -1.185, 0.25, 1.3325, 1.185, 0.25, 1.3325, -1.185, 0.25, -1.3325, 1.185, 0.25, 1.3325, -1.185, 0.25, -1.3325, -1.185, 0.25, -1.3325, 1.185, -0.25, 1.3325, -1.185, -0.25, 1.3325, 1.185, -0.25, -1.3325, -1.185, -0.25, 1.3325, 1.185, -0.25, -1.3325, 1.185, -0.25, -1.3325, -1.185, 0.25, 1.3325, 1.185, -0.25, 1.3325, 1.185, 0.25, 1.3325, -1.185, -0.25, 1.3325, 1.185, -0.25, 1.3325, -1.185, 0.25, 1.3325, -1.185, -0.25, -1.3325, 1.185, 0.25, -1.3325, 1.185, -0.25, -1.3325, -1.185, 0.25, -1.3325, 1.185, 0.25, -1.3325, -1.185, -0.25, -1.3325, -1.185)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tv0r6"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="SphereMesh" id="SphereMesh_0t0bb"]
+[sub_resource type="BoxMesh" id="BoxMesh_0t0bb"]
+size = Vector3(0.5, 2.665, 4)
 
-[sub_resource type="BoxMesh" id="BoxMesh_m1rvo"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7430m"]
+data = PackedVector3Array(-0.25, 1.3325, 2.11, 0.25, 1.3325, 2.11, -0.25, -1.3325, 2.11, 0.25, 1.3325, 2.11, 0.25, -1.3325, 2.11, -0.25, -1.3325, 2.11, 0.25, 1.3325, -2.11, -0.25, 1.3325, -2.11, 0.25, -1.3325, -2.11, -0.25, 1.3325, -2.11, -0.25, -1.3325, -2.11, 0.25, -1.3325, -2.11, 0.25, 1.3325, 2.11, 0.25, 1.3325, -2.11, 0.25, -1.3325, 2.11, 0.25, 1.3325, -2.11, 0.25, -1.3325, -2.11, 0.25, -1.3325, 2.11, -0.25, 1.3325, -2.11, -0.25, 1.3325, 2.11, -0.25, -1.3325, -2.11, -0.25, 1.3325, 2.11, -0.25, -1.3325, 2.11, -0.25, -1.3325, -2.11, 0.25, 1.3325, 2.11, -0.25, 1.3325, 2.11, 0.25, 1.3325, -2.11, -0.25, 1.3325, 2.11, -0.25, 1.3325, -2.11, 0.25, 1.3325, -2.11, -0.25, -1.3325, 2.11, 0.25, -1.3325, 2.11, -0.25, -1.3325, -2.11, 0.25, -1.3325, 2.11, 0.25, -1.3325, -2.11, -0.25, -1.3325, -2.11)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dikmn"]
 size = Vector3(0.18, 0.455, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0iq75"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4le2u"]
 albedo_color = Color(0.362829, 0.362829, 0.362829, 0.597)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4mggj"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_51ifu"]
 data = PackedVector3Array(-0.09, 0.2275, 2, 0.09, 0.2275, 2, -0.09, -0.2275, 2, 0.09, 0.2275, 2, 0.09, -0.2275, 2, -0.09, -0.2275, 2, 0.09, 0.2275, -2, -0.09, 0.2275, -2, 0.09, -0.2275, -2, -0.09, 0.2275, -2, -0.09, -0.2275, -2, 0.09, -0.2275, -2, 0.09, 0.2275, 2, 0.09, 0.2275, -2, 0.09, -0.2275, 2, 0.09, 0.2275, -2, 0.09, -0.2275, -2, 0.09, -0.2275, 2, -0.09, 0.2275, -2, -0.09, 0.2275, 2, -0.09, -0.2275, -2, -0.09, 0.2275, 2, -0.09, -0.2275, 2, -0.09, -0.2275, -2, 0.09, 0.2275, 2, -0.09, 0.2275, 2, 0.09, 0.2275, -2, -0.09, 0.2275, 2, -0.09, 0.2275, -2, 0.09, 0.2275, -2, -0.09, -0.2275, 2, 0.09, -0.2275, 2, -0.09, -0.2275, -2, 0.09, -0.2275, 2, 0.09, -0.2275, -2, -0.09, -0.2275, -2)
 
-[sub_resource type="SphereMesh" id="SphereMesh_7430m"]
+[sub_resource type="BoxMesh" id="BoxMesh_m2oru"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojnjx"]
+albedo_color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_chdq4"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Main" type="Node3D" node_paths=PackedStringArray("xr_camera_3d")]
 script = ExtResource("1_7i2n1")
@@ -248,8 +252,12 @@ collision_mask = 536870912
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.1)
 shape = SubResource("SphereShape3D_ngfnh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-skeleton = NodePath("../TeleporterManager")
+[node name="FadeMesh" parent="." instance=ExtResource("18_813qh")]
+visible = false
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("12_bjmd5")
+volume_db = -10.0
 
 [node name="TeleporterManager" type="Node3D" parent="." node_paths=PackedStringArray("current_location", "current_scene", "xr_origin", "xr_camera", "xr_left_function_pointer", "xr_right_function_pointer", "audio_node", "fade_mesh", "spectator_camera")]
 script = ExtResource("16_wnrto")
@@ -266,327 +274,244 @@ spectator_camera = NodePath("../DesktopViewContainer/DesktopViewport/SpectatorCa
 metadata/_custom_type_script = "uid://cxy8oxoldmaoc"
 
 [node name="Start" type="Node3D" parent="TeleporterManager"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.844249, 0, 0)
 script = ExtResource("10_bslk4")
 image_filename = "uid://ypv2ol3dwblw"
 
 [node name="Teleporters" type="Node3D" parent="TeleporterManager/Start"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.844249, 0, 0)
 
-[node name="Start" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters") groups=["Teleporters"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29789, 0, 0)
+[node name="Start" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
 script = ExtResource("11_0t0bb")
 teleporter_name = "Start"
-teleporter_position = Vector3(-2.29789, 0, 0)
-connected_teleporters = [NodePath("../TeleporterSystem"), NodePath("../Inventory"), NodePath("../OIS")]
-loads_new_scene = null
-update_connections = null
+connected_teleporters = [NodePath("../InventorySystem"), NodePath("../TeleporterSystem"), NodePath("../OIS")]
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
-[node name="Inventory" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters") groups=["Teleporters"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+[node name="InventorySystem" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 script = ExtResource("11_0t0bb")
-teleporter_name = "Inventory"
+teleporter_name = "InventorySystem"
 teleporter_enabled = true
-teleporter_position = Vector3(-5, 0, 0)
+teleporter_position = Vector3(-4, 0, 0)
 connected_teleporters = [NodePath("../Start")]
-loads_new_scene = null
-update_connections = null
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
-[node name="TeleporterSystem" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters", "new_scene", "new_teleporter") groups=["Teleporters"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.04688)
+[node name="TeleporterSystem" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.44814)
 script = ExtResource("11_0t0bb")
 teleporter_name = "TeleporterSystem"
 teleporter_enabled = true
-teleporter_position = Vector3(0, 0, -3.04688)
-connected_teleporters = [NodePath("../../../TPDemo/Teleporters/TPDemo1"), NodePath("../Start")]
-loads_new_scene = true
-new_scene = NodePath("../../../TPDemo")
-new_teleporter = NodePath("../../../TPDemo/Teleporters/TPDemo1")
+teleporter_position = Vector3(0, 0, -5.44814)
+connected_teleporters = [NodePath("../Start")]
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
-[node name="OIS" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters") groups=["Teleporters"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43941, 0, 0)
+[node name="OIS" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters", "new_scene", "new_teleporter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54312, 0, 0)
 script = ExtResource("11_0t0bb")
 teleporter_name = "OIS"
 teleporter_enabled = true
-teleporter_position = Vector3(1.43941, 0, 0)
-connected_teleporters = [NodePath("../Start"), NodePath("../../../OIS/Teleporters/OIS-1"), NodePath("../../../OIS/Teleporters/OIS-2"), NodePath("../../../OIS/Teleporters/OIS-3"), NodePath("../../../OIS/Teleporters/OIS-4"), NodePath("../../../OIS/Teleporters/OIS-5")]
-loads_new_scene = null
-update_connections = null
-
-[node name="CubeBoxTable" type="MeshInstance3D" parent="TeleporterManager/Start"]
-transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -4.29632, -0.0057106, 1.38598)
-mesh = SubResource("BoxMesh_0kucg")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_2sbol")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/Start/CubeBoxTable"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/Start/CubeBoxTable/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_acimi")
-
-[node name="WallBlack" type="MeshInstance3D" parent="TeleporterManager/Start"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.20317, 1.25416, 0)
-mesh = SubResource("BoxMesh_f7rct")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_2sbol")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/Start/WallBlack"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/Start/WallBlack/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_be46h")
-
-[node name="WallWhite" type="MeshInstance3D" parent="TeleporterManager/Start"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60873, 1.25416, -0.423791)
-mesh = SubResource("BoxMesh_uf4kj")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/Start/WallWhite"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/Start/WallWhite/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_uf4kj")
+teleporter_position = Vector3(3.54312, 0, 0)
+connected_teleporters = [NodePath("../Start"), NodePath("../../../OIS/Teleporters/OIS-1")]
+loads_new_scene = true
+new_scene = NodePath("../../../OIS")
+new_teleporter = NodePath("../../../OIS/Teleporters/OIS-1")
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TeleporterManager/Start"]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 mesh = ExtResource("12_0t0bb")
 
-[node name="TPDemo" type="Node3D" parent="TeleporterManager"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.9833)
+[node name="OmniLight3D" type="OmniLight3D" parent="TeleporterManager/Start"]
+light_energy = 10.0
+omni_range = 10.0
+
+[node name="WallBlack" type="MeshInstance3D" parent="TeleporterManager/Start"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.04742, 1.25416, 0)
+mesh = SubResource("BoxMesh_3dfh6")
+surface_material_override/0 = SubResource("StandardMaterial3D_tel5a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/Start/WallBlack"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/Start/WallBlack/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_21vr3")
+
+[node name="WallWhite" type="MeshInstance3D" parent="TeleporterManager/Start"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45298, 1.25416, -0.423791)
+mesh = SubResource("BoxMesh_hcb1o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/Start/WallWhite"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/Start/WallWhite/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_x01a6")
+
+[node name="CubeBoxTable" type="MeshInstance3D" parent="TeleporterManager/Start"]
+transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -5.14057, -0.0057106, 1.38598)
+mesh = SubResource("BoxMesh_ssbh5")
+surface_material_override/0 = SubResource("StandardMaterial3D_tel5a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/Start/CubeBoxTable"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/Start/CubeBoxTable/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tv0r6")
+
+[node name="OIS" type="Node3D" parent="TeleporterManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1876, 0, 0)
 script = ExtResource("10_bslk4")
 image_filename = "uid://bjrhevquay47p"
 
-[node name="Teleporters" type="Node3D" parent="TeleporterManager/TPDemo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.9833)
-
-[node name="TPDemo1" type="Node3D" parent="TeleporterManager/TPDemo/Teleporters" node_paths=PackedStringArray("connected_teleporters", "new_scene", "new_teleporter")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
-script = ExtResource("11_0t0bb")
-teleporter_name = "TPDemo1"
-teleporter_position = Vector3(0, 0, -9)
-connected_teleporters = [NodePath("../../../Start/Teleporters/TeleporterSystem"), NodePath("../TPDemo2")]
-loads_new_scene = true
-new_scene = NodePath("../../../Start")
-new_teleporter = NodePath("../../../Start/Teleporters/TeleporterSystem")
-
-[node name="TPDemo2" type="Node3D" parent="TeleporterManager/TPDemo/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -12)
-script = ExtResource("11_0t0bb")
-teleporter_name = "TPDemo2"
-teleporter_position = Vector3(-2.5, 0, -12)
-connected_teleporters = [NodePath("../TPDemo4"), NodePath("../TPDemo1")]
-loads_new_scene = null
-update_connections = null
-
-[node name="TPDemo3" type="Node3D" parent="TeleporterManager/TPDemo/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -12)
-script = ExtResource("11_0t0bb")
-teleporter_name = "TPDemo3"
-teleporter_position = Vector3(2.5, 0, -12)
-connected_teleporters = [NodePath("../TPDemo4")]
-loads_new_scene = null
-update_connections = null
-
-[node name="TPDemo4" type="Node3D" parent="TeleporterManager/TPDemo/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
-script = ExtResource("11_0t0bb")
-teleporter_name = "TPDemo4"
-teleporter_position = Vector3(0, 0, -15)
-connected_teleporters = [NodePath("../TPDemo3"), NodePath("../TPDemo2")]
-loads_new_scene = null
-update_connections = null
-
-[node name="WallWhite2" type="MeshInstance3D" parent="TeleporterManager/TPDemo"]
-transform = Transform3D(0.544127, 0, -0.839003, 0, 1, 0, 0.839003, 0, 0.544127, 0.181571, 1.25416, 0.089076)
-mesh = SubResource("BoxMesh_2kfex")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/TPDemo/WallWhite2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/TPDemo/WallWhite2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_cdv65")
-
-[node name="WallBlackTop" type="MeshInstance3D" parent="TeleporterManager/TPDemo"]
-transform = Transform3D(-0.558151, 0, -0.82974, 0, 1, 0, 0.82974, 0, -0.558151, 0.181571, 3.90618, 0.089076)
-mesh = SubResource("BoxMesh_2kfex")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_2sbol")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/TPDemo/WallBlackTop"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/TPDemo/WallBlackTop/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_cdv65")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TeleporterManager/TPDemo"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
-mesh = SubResource("SphereMesh_0t0bb")
-
-[node name="OIS" type="Node3D" parent="TeleporterManager"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7589, 0, 0)
-script = ExtResource("10_bslk4")
-image_filename = "uid://bxx2ruaqcq4g6"
-
 [node name="Teleporters" type="Node3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7589, 0, 0)
 
-[node name="OIS-1" type="Node3D" parent="TeleporterManager/OIS/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -3)
+[node name="OIS-1" type="Node3D" parent="TeleporterManager/OIS/Teleporters" node_paths=PackedStringArray("connected_teleporters", "new_scene", "new_teleporter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.68969, 0, 0)
 script = ExtResource("11_0t0bb")
 teleporter_name = "OIS-1"
-teleporter_position = Vector3(10, 0, -3)
-connected_teleporters = [NodePath("../../../Start/Teleporters/OIS"), NodePath("../OIS-2"), NodePath("../OIS-3"), NodePath("../OIS-4"), NodePath("../OIS-5")]
-loads_new_scene = null
-update_connections = null
+teleporter_position = Vector3(6.49791, 0, 0)
+connected_teleporters = [NodePath("../OIS-2"), NodePath("../OIS-6"), NodePath("../../../Start/Teleporters/OIS")]
+loads_new_scene = true
+new_scene = NodePath("../../../Start")
+new_teleporter = NodePath("../../../Start/Teleporters/OIS")
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
 [node name="OIS-2" type="Node3D" parent="TeleporterManager/OIS/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88871, 0, 3.03033)
 script = ExtResource("11_0t0bb")
 teleporter_name = "OIS-2"
-teleporter_position = Vector3(10, 0, 3)
-connected_teleporters = [NodePath("../../../Start/Teleporters/OIS"), NodePath("../OIS-1"), NodePath("../OIS-3"), NodePath("../OIS-4"), NodePath("../OIS-5")]
-loads_new_scene = null
-update_connections = null
+teleporter_position = Vector3(8.29889, 0, 3.03033)
+connected_teleporters = [NodePath("../OIS-1"), NodePath("../OIS-3")]
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
 [node name="OIS-3" type="Node3D" parent="TeleporterManager/OIS/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.84518)
 script = ExtResource("11_0t0bb")
 teleporter_name = "OIS-3"
-teleporter_position = Vector3(15, 0, -3)
-connected_teleporters = [NodePath("../../../Start/Teleporters/OIS"), NodePath("../OIS-1"), NodePath("../OIS-2"), NodePath("../OIS-4"), NodePath("../OIS-5")]
-loads_new_scene = null
-update_connections = null
+teleporter_position = Vector3(12.1876, 0, 2.84518)
+connected_teleporters = [NodePath("../OIS-2"), NodePath("../OIS-4")]
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
 [node name="OIS-4" type="Node3D" parent="TeleporterManager/OIS/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3369, 0, 0.484838)
 script = ExtResource("11_0t0bb")
 teleporter_name = "OIS-4"
-teleporter_position = Vector3(15, 0, 3)
-connected_teleporters = [NodePath("../../../Start/Teleporters/OIS"), NodePath("../OIS-1"), NodePath("../OIS-2"), NodePath("../OIS-3"), NodePath("../OIS-5")]
-loads_new_scene = null
-update_connections = null
+teleporter_position = Vector3(15.5245, 0, 0.484838)
+connected_teleporters = [NodePath("../OIS-3"), NodePath("../OIS-5")]
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
 [node name="OIS-5" type="Node3D" parent="TeleporterManager/OIS/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5672, 0, 0.0326228)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.78286)
 script = ExtResource("11_0t0bb")
 teleporter_name = "OIS-5"
-teleporter_position = Vector3(17.5672, 0, 0.0326228)
-connected_teleporters = [NodePath("../../../Start/Teleporters/OIS"), NodePath("../OIS-1"), NodePath("../OIS-2"), NodePath("../OIS-3"), NodePath("../OIS-4")]
-loads_new_scene = null
-update_connections = null
+teleporter_position = Vector3(12.1876, 0, -2.78286)
+connected_teleporters = [NodePath("../OIS-4"), NodePath("../OIS-6")]
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
-[node name="CubeBoxTable3" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -5.67917, -0.0057106, -3.71814)
-mesh = SubResource("BoxMesh_0kucg")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_2sbol")
+[node name="OIS-6" type="Node3D" parent="TeleporterManager/OIS/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.52433, 0, -2.46703)
+script = ExtResource("11_0t0bb")
+teleporter_name = "OIS-6"
+teleporter_position = Vector3(8.66327, 0, -2.46703)
+connected_teleporters = [NodePath("../OIS-1"), NodePath("../OIS-5")]
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/CubeBoxTable3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TeleporterManager/OIS"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+mesh = ExtResource("12_0t0bb")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_acimi")
-
-[node name="CubeBoxTable2" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, 1.23171, -0.0057106, -4.44212)
-mesh = SubResource("BoxMesh_0kucg")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_2sbol")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/CubeBoxTable2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_acimi")
-
-[node name="CubeBoxTable4" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -0.165792, -0.0057106, 4.29267)
-mesh = SubResource("BoxMesh_0kucg")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_2sbol")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/CubeBoxTable4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable4/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_acimi")
-
-[node name="CubeBoxTable5" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.351041, 0, -0.93636, 0, 1, 0, 0.93636, 0, 0.351041, -3.76789, -0.0057106, 4.40804)
-mesh = SubResource("BoxMesh_0kucg")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_2sbol")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/CubeBoxTable5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable5/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_acimi")
-
-[node name="CubeBoxTable6" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, 5.48271, -0.0057106, -0.0159352)
-mesh = SubResource("BoxMesh_0kucg")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_2sbol")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/CubeBoxTable6"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable6/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_acimi")
+[node name="OmniLight3D" type="OmniLight3D" parent="TeleporterManager/OIS"]
+light_energy = 10.0
+omni_range = 10.0
 
 [node name="WallWhite3" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.69769, 1.25416, -4.18546)
-mesh = SubResource("BoxMesh_uf4kj")
-skeleton = NodePath("")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.53552, 1.25416, -4.18546)
+mesh = SubResource("BoxMesh_0t0bb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/WallWhite3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/WallWhite3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_uf4kj")
+shape = SubResource("ConcavePolygonShape3D_7430m")
 
 [node name="WallWhite4" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.559005, 0, 0.829164, 0, 1, 0, -0.829164, 0, 0.559005, 2.21171, 0.142283, -5.57207)
-mesh = SubResource("BoxMesh_uf4kj")
-skeleton = NodePath("")
+transform = Transform3D(0.559005, 0, 0.829164, 0, 1, 0, -0.829164, 0, 0.559005, 2.37388, 0.142283, -5.57207)
+mesh = SubResource("BoxMesh_0t0bb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/WallWhite4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/WallWhite4/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_uf4kj")
+shape = SubResource("ConcavePolygonShape3D_7430m")
 
 [node name="WallWhite5" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.995678, 0, 0.0928746, 0, 1, 0, -0.0928746, 0, 0.995678, 6.39891, 0.253168, -0.191698)
-mesh = SubResource("BoxMesh_uf4kj")
-skeleton = NodePath("")
+transform = Transform3D(0.995678, 0, 0.0928746, 0, 1, 0, -0.0928746, 0, 0.995678, 6.56108, 0.253168, -0.191698)
+mesh = SubResource("BoxMesh_0t0bb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/WallWhite5"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/WallWhite5/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_uf4kj")
+shape = SubResource("ConcavePolygonShape3D_7430m")
 
 [node name="WallWhite6" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(-0.275168, 0, 0.961396, 0, 1, 0, -0.961396, 0, -0.275168, 1.69881, 1.05695, 3.99763)
-mesh = SubResource("BoxMesh_m1rvo")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_0iq75")
+transform = Transform3D(-0.275168, 0, 0.961396, 0, 1, 0, -0.961396, 0, -0.275168, 1.86098, 1.05695, 3.99763)
+mesh = SubResource("BoxMesh_dikmn")
+surface_material_override/0 = SubResource("StandardMaterial3D_4le2u")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/WallWhite6"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/WallWhite6/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_4mggj")
+shape = SubResource("ConcavePolygonShape3D_51ifu")
 
 [node name="WallWhite7" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(-0.275168, 0, 0.961396, 0, 1, 0, -0.961396, 0, -0.275168, 1.69421, 1.05136, 4.35109)
-mesh = SubResource("BoxMesh_uf4kj")
-skeleton = NodePath("")
+transform = Transform3D(-0.275168, 0, 0.961396, 0, 1, 0, -0.961396, 0, -0.275168, 1.85638, 1.05136, 4.35109)
+mesh = SubResource("BoxMesh_0t0bb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/WallWhite7"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/WallWhite7/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_uf4kj")
+shape = SubResource("ConcavePolygonShape3D_7430m")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
-mesh = SubResource("SphereMesh_7430m")
+[node name="CubeBoxTable3" type="MeshInstance3D" parent="TeleporterManager/OIS"]
+transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -5.517, -0.0057106, -3.71814)
+mesh = SubResource("BoxMesh_m2oru")
+surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 
-[node name="FadeMesh" parent="." instance=ExtResource("18_813qh")]
-visible = false
+[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/CubeBoxTable3"]
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("12_bjmd5")
-volume_db = -10.0
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_chdq4")
+
+[node name="CubeBoxTable2" type="MeshInstance3D" parent="TeleporterManager/OIS"]
+transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, 1.39388, -0.0057106, -4.44212)
+mesh = SubResource("BoxMesh_m2oru")
+surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/CubeBoxTable2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_chdq4")
+
+[node name="CubeBoxTable4" type="MeshInstance3D" parent="TeleporterManager/OIS"]
+transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -0.00362015, -0.0057106, 4.29267)
+mesh = SubResource("BoxMesh_m2oru")
+surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/CubeBoxTable4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_chdq4")
+
+[node name="CubeBoxTable5" type="MeshInstance3D" parent="TeleporterManager/OIS"]
+transform = Transform3D(0.351041, 0, -0.93636, 0, 1, 0, 0.93636, 0, 0.351041, -3.60572, -0.0057106, 4.40804)
+mesh = SubResource("BoxMesh_m2oru")
+surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/CubeBoxTable5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_chdq4")
+
+[node name="CubeBoxTable6" type="MeshInstance3D" parent="TeleporterManager/OIS"]
+transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, 5.64488, -0.0057106, -0.0159352)
+mesh = SubResource("BoxMesh_m2oru")
+surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/CubeBoxTable6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_chdq4")
 
 [connection signal="pressed" from="DesktopViewContainer/DesktopViewport/CanvasLayer/Control/Button" to="DesktopViewContainer/DesktopViewport/CanvasLayer" method="_toggle_xr_view"]

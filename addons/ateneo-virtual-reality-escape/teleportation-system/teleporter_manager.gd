@@ -4,15 +4,9 @@ extends Node3D
 
 signal location_changed(location_name)
 
-@export var current_location : Teleporter:
-	set(current_loc):
-		if current_location != current_loc:
-			current_location = current_loc
+@export var current_location : Teleporter
 			
-@export var current_scene : Panorama:
-	set(current_sc):
-		if current_scene != current_sc:
-			current_scene = current_sc
+@export var current_scene : Panorama
 
 @export var enabled : bool = false
 
@@ -49,7 +43,7 @@ signal location_changed(location_name)
 @export var active_controller : XRController3D
 
 var teleport_called : bool
-var initial_teleport : bool
+var initial_teleport : bool = true
 
 var teleporters : Array[Node]
 var scenes : Array[Node]
@@ -61,21 +55,22 @@ func _ready() -> void:
 	if not Engine.is_editor_hint():
 		teleport_called = true
 		if teleport_called and is_instance_valid(current_location):
-			initial_teleport = true
 			_teleport_player(current_location)
 			teleport_called = false
 			initial_teleport = false
 		_connect_controller_buttons()
+		
+		scenes = get_children()
+		for scene in scenes:
+			if scene != current_scene:
+				scene.get_parent().remove_child(scene)
+			
 	
 	teleporters = get_tree().get_nodes_in_group("Teleporters")
 	for teleporter in teleporters:
 		teleporter.connect("new_scene_teleporter", _update_teleporters)
 		
-	scenes = get_children()
-	for scene in scenes:
-		remove_child(scene)
-		
-	add_child(current_scene)
+	
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -96,9 +91,18 @@ func _process(delta: float) -> void:
 		_runtime_pointer()
 	
 func _change_scene() -> void:
-	add_child(pointing_at.new_scene)
-	_teleport_player(pointing_at.new_teleporter)
-	remove_child(current_location.new_scene)
+	var new_scene = pointing_at.new_scene
+	if new_scene.get_parent(): 
+		new_scene.get_parent().remove_child(new_scene)
+	add_child(new_scene)
+	
+	var new_teleporter = pointing_at.new_teleporter
+	_teleport_player(new_teleporter)
+	
+	#var old_scene = new_teleporter.new_scene
+	#print(old_scene)
+	#if old_scene.get_parent():
+		#old_scene.get_parent().remove_child(old_scene)
 	
 func _update_teleporters():
 	for teleporter in teleporters:
@@ -107,11 +111,15 @@ func _update_teleporters():
 	
 	
 func _set_teleporter_states() -> void: #set which teleporters are enabled or not
+	if not Engine.is_editor_hint():
+		print("in set teleporter states: ", current_location, self)
 	if enabled: 
 		if is_instance_valid(current_location):
 			for teleporters_a in teleporters:
 				if teleporters_a == current_location:
 					teleporters_a.current_teleporter = true
+					if not Engine.is_editor_hint():
+						print(teleporters_a)
 				else:
 					teleporters_a.current_teleporter = false
 				if teleporters_a not in current_location.connected_teleporters or not teleporters_a.teleporter_active:
@@ -150,6 +158,11 @@ func _teleport_player(location : Teleporter) -> void:
 	current_location = location
 	_fade_in()
 	emit_signal("location_changed", location.teleporter_name)
+	
+	if location.loads_new_scene:
+		var old_scene = location.new_scene
+		if old_scene.get_parent():
+			old_scene.get_parent().remove_child(old_scene)
 
 func _teleport_spectator_camera(teleporter : Teleporter) -> void:
 	spectator_camera.rotation.y = teleporter.spectator_camera_rotation.y

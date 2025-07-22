@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://mbgdpom58bp2"]
 
 [ext_resource type="Script" uid="uid://1mi6k5laa2j0" path="res://addons/ateneo-virtual-reality-escape/teleportation-system/panorama.gd" id="1_n1w1k"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_0c02a"]
+[ext_resource type="SphereMesh" uid="uid://bp34u6v5tss3w" path="res://addons/ateneo-virtual-reality-escape/teleportation-system/misc-resources/PanoramaSphereMeshBase.tres" id="2_0c02a"]
 
 [node name="Panorama" type="Node3D"]
 script = ExtResource("1_n1w1k")
@@ -10,5 +9,9 @@ script = ExtResource("1_n1w1k")
 [node name="Teleporters" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-mesh = SubResource("SphereMesh_0c02a")
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+mesh = ExtResource("2_0c02a")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 10.0
+omni_range = 10.0
