@@ -4,7 +4,10 @@ extends Node3D
 
 signal location_changed(location_name)
 
-@export var current_location : Teleporter
+@export var current_location : Teleporter:
+	set(curr_loc):
+		if current_location != curr_loc:
+			current_location = curr_loc
 			
 @export var current_scene : Panorama
 
@@ -83,6 +86,7 @@ func _process(delta: float) -> void:
 	if teleport_called and is_instance_valid(pointing_at):
 		if pointing_at.loads_new_scene:
 			_change_scene()
+			teleporters = get_tree().get_nodes_in_group("Teleporters")
 		else:
 			_teleport_player(pointing_at)
 		teleport_called = false
@@ -111,15 +115,21 @@ func _update_teleporters():
 	
 	
 func _set_teleporter_states() -> void: #set which teleporters are enabled or not
-	if not Engine.is_editor_hint():
-		print("in set teleporter states: ", current_location, self)
+	#if not Engine.is_editor_hint():
+		#print("in set teleporter states: ", current_location, self)
 	if enabled: 
 		if is_instance_valid(current_location):
+			#if not Engine.is_editor_hint():
+				#print("after instance valid: ", current_location, self)
 			for teleporters_a in teleporters:
+				if not Engine.is_editor_hint():
+					print("after instance valid: ", current_location, " ", teleporters_a)
 				if teleporters_a == current_location:
 					teleporters_a.current_teleporter = true
 					if not Engine.is_editor_hint():
-						print(teleporters_a)
+						print("in game: ", teleporters_a)
+					#if Engine.is_editor_hint():
+						#print("in editor: ", teleporters_a)
 				else:
 					teleporters_a.current_teleporter = false
 				if teleporters_a not in current_location.connected_teleporters or not teleporters_a.teleporter_active:
@@ -156,6 +166,7 @@ func _teleport_player(location : Teleporter) -> void:
 		_teleport_spectator_camera(location)
 	
 	current_location = location
+	print("y tf u aint doing anything ", current_location, " ", location)
 	_fade_in()
 	emit_signal("location_changed", location.teleporter_name)
 	

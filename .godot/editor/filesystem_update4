@@ -1,4 +1,3 @@
-res://default_bus_layout.tres
 res://src/teleporter_test.tscn
 res://openxr_action_map.tres
 res://addons/ateneo-virtual-reality-escape/teleportation-system/misc-resources/PanoramaSphereMeshBase.tres
@@ -10,4 +9,3 @@ res://src/main_avre.tscn
 res://src/ois-objects/ois_hammer.tscn
 res://src/ois-objects/ois_rag.tscn
 res://addons/ateneo-virtual-reality-escape/teleportation-system/panorama.tscn
-res://addons/ateneo-virtual-reality-escape/teleportation-system/teleporter.gd
