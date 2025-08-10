@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://b1jpveycsb8ia"]
+[gd_scene load_steps=46 format=3 uid="uid://b1jpveycsb8ia"]
 
 [ext_resource type="Script" uid="uid://b3gmvl6jgl8k7" path="res://src/main_avre.gd" id="1_7i2n1"]
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_g66jk"]
@@ -120,6 +120,15 @@ albedo_color = Color(0.125911, 0.125911, 0.125911, 1)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_chdq4"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="BoxMesh" id="BoxMesh_7430m"]
+size = Vector3(0.5, 2.665, 2.37)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dikmn"]
+data = PackedVector3Array(-0.25, 1.3325, 1.185, 0.25, 1.3325, 1.185, -0.25, -1.3325, 1.185, 0.25, 1.3325, 1.185, 0.25, -1.3325, 1.185, -0.25, -1.3325, 1.185, 0.25, 1.3325, -1.185, -0.25, 1.3325, -1.185, 0.25, -1.3325, -1.185, -0.25, 1.3325, -1.185, -0.25, -1.3325, -1.185, 0.25, -1.3325, -1.185, 0.25, 1.3325, 1.185, 0.25, 1.3325, -1.185, 0.25, -1.3325, 1.185, 0.25, 1.3325, -1.185, 0.25, -1.3325, -1.185, 0.25, -1.3325, 1.185, -0.25, 1.3325, -1.185, -0.25, 1.3325, 1.185, -0.25, -1.3325, -1.185, -0.25, 1.3325, 1.185, -0.25, -1.3325, 1.185, -0.25, -1.3325, -1.185, 0.25, 1.3325, 1.185, -0.25, 1.3325, 1.185, 0.25, 1.3325, -1.185, -0.25, 1.3325, 1.185, -0.25, 1.3325, -1.185, 0.25, 1.3325, -1.185, -0.25, -1.3325, 1.185, 0.25, -1.3325, 1.185, -0.25, -1.3325, -1.185, 0.25, -1.3325, 1.185, 0.25, -1.3325, -1.185, -0.25, -1.3325, -1.185)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51ifu"]
+albedo_color = Color(0.125911, 0.125911, 0.125911, 1)
+
 [node name="Main" type="Node3D" node_paths=PackedStringArray("xr_camera_3d")]
 script = ExtResource("1_7i2n1")
 xr_camera_3d = NodePath("XRPlayer/XRViewport/XROrigin3D/XRCamera3D")
@@ -163,7 +172,6 @@ environment = SubResource("Environment_sbmxn")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
-visible = false
 material_override = SubResource("StandardMaterial3D_5y8e8")
 mesh = SubResource("PlaneMesh_6fh4i")
 
@@ -277,6 +285,10 @@ metadata/_custom_type_script = "uid://cxy8oxoldmaoc"
 script = ExtResource("10_bslk4")
 image_filename = "uid://ypv2ol3dwblw"
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TeleporterManager/Start"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+mesh = ExtResource("12_0t0bb")
+
 [node name="Teleporters" type="Node3D" parent="TeleporterManager/Start"]
 
 [node name="Start" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
@@ -294,13 +306,16 @@ teleporter_position = Vector3(-4, 0, 0)
 connected_teleporters = [NodePath("../Start")]
 metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
-[node name="TeleporterSystem" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
+[node name="TeleporterSystem" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters", "new_scene", "new_teleporter")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.44814)
 script = ExtResource("11_0t0bb")
 teleporter_name = "TeleporterSystem"
 teleporter_enabled = true
 teleporter_position = Vector3(0, 0, -5.44814)
-connected_teleporters = [NodePath("../Start")]
+connected_teleporters = [NodePath("../Start"), NodePath("../../../Teleportation/Teleporters/Tele-1")]
+loads_new_scene = true
+new_scene = NodePath("../../../Teleportation")
+new_teleporter = NodePath("../../../Teleportation/Teleporters/Tele-1")
 metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
 [node name="OIS" type="Node3D" parent="TeleporterManager/Start/Teleporters" node_paths=PackedStringArray("connected_teleporters", "new_scene", "new_teleporter")]
@@ -314,10 +329,6 @@ loads_new_scene = true
 new_scene = NodePath("../../../OIS")
 new_teleporter = NodePath("../../../OIS/Teleporters/OIS-1")
 metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TeleporterManager/Start"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
-mesh = ExtResource("12_0t0bb")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TeleporterManager/Start"]
 light_energy = 10.0
@@ -343,7 +354,7 @@ mesh = SubResource("BoxMesh_hcb1o")
 shape = SubResource("ConcavePolygonShape3D_x01a6")
 
 [node name="CubeBoxTable" type="MeshInstance3D" parent="TeleporterManager/Start"]
-transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -5.14057, -0.0057106, 1.38598)
+transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -5.14057, 0.493908, 1.38598)
 mesh = SubResource("BoxMesh_ssbh5")
 surface_material_override/0 = SubResource("StandardMaterial3D_tel5a")
 
@@ -356,6 +367,10 @@ shape = SubResource("ConcavePolygonShape3D_tv0r6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1876, 0, 0)
 script = ExtResource("10_bslk4")
 image_filename = "uid://bjrhevquay47p"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TeleporterManager/OIS"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+mesh = ExtResource("12_0t0bb")
 
 [node name="Teleporters" type="Node3D" parent="TeleporterManager/OIS"]
 
@@ -410,10 +425,6 @@ teleporter_position = Vector3(8.66327, 0, -2.46703)
 connected_teleporters = [NodePath("../OIS-1"), NodePath("../OIS-5")]
 metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
-mesh = ExtResource("12_0t0bb")
-
 [node name="OmniLight3D" type="OmniLight3D" parent="TeleporterManager/OIS"]
 light_energy = 10.0
 omni_range = 10.0
@@ -428,7 +439,7 @@ mesh = SubResource("BoxMesh_0t0bb")
 shape = SubResource("ConcavePolygonShape3D_7430m")
 
 [node name="WallWhite4" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.559005, 0, 0.829164, 0, 1, 0, -0.829164, 0, 0.559005, 2.37388, 0.142283, -5.57207)
+transform = Transform3D(0.559005, 0, 0.829164, 0, 1, 0, -0.829164, 0, 0.559005, 2.37388, 1.32291, -5.57207)
 mesh = SubResource("BoxMesh_0t0bb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/WallWhite4"]
@@ -437,7 +448,7 @@ mesh = SubResource("BoxMesh_0t0bb")
 shape = SubResource("ConcavePolygonShape3D_7430m")
 
 [node name="WallWhite5" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.995678, 0, 0.0928746, 0, 1, 0, -0.0928746, 0, 0.995678, 6.56108, 0.253168, -0.191698)
+transform = Transform3D(0.995678, 0, 0.0928746, 0, 1, 0, -0.0928746, 0, 0.995678, 6.56108, 1.43379, -0.191698)
 mesh = SubResource("BoxMesh_0t0bb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/OIS/WallWhite5"]
@@ -465,7 +476,7 @@ mesh = SubResource("BoxMesh_0t0bb")
 shape = SubResource("ConcavePolygonShape3D_7430m")
 
 [node name="CubeBoxTable3" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -5.517, -0.0057106, -3.71814)
+transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -5.517, 0.478139, -3.71814)
 mesh = SubResource("BoxMesh_m2oru")
 surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 
@@ -475,7 +486,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 shape = SubResource("ConcavePolygonShape3D_chdq4")
 
 [node name="CubeBoxTable2" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, 1.39388, -0.0057106, -4.44212)
+transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, 1.39388, 0.478139, -4.44212)
 mesh = SubResource("BoxMesh_m2oru")
 surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 
@@ -485,7 +496,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 shape = SubResource("ConcavePolygonShape3D_chdq4")
 
 [node name="CubeBoxTable4" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -0.00362015, -0.0057106, 4.29267)
+transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, -0.00362015, 0.478139, 4.29267)
 mesh = SubResource("BoxMesh_m2oru")
 surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 
@@ -495,7 +506,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 shape = SubResource("ConcavePolygonShape3D_chdq4")
 
 [node name="CubeBoxTable5" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.351041, 0, -0.93636, 0, 1, 0, 0.93636, 0, 0.351041, -3.60572, -0.0057106, 4.40804)
+transform = Transform3D(0.351041, 0, -0.93636, 0, 1, 0, 0.93636, 0, 0.351041, -3.60572, 0.478139, 4.40804)
 mesh = SubResource("BoxMesh_m2oru")
 surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 
@@ -505,7 +516,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 shape = SubResource("ConcavePolygonShape3D_chdq4")
 
 [node name="CubeBoxTable6" type="MeshInstance3D" parent="TeleporterManager/OIS"]
-transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, 5.64488, -0.0057106, -0.0159352)
+transform = Transform3D(0.681296, 0, 0.732008, 0, 1, 0, -0.732008, 0, 0.681296, 5.64488, 0.478139, -0.0159352)
 mesh = SubResource("BoxMesh_m2oru")
 surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 
@@ -513,5 +524,74 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ojnjx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/OIS/CubeBoxTable6/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_chdq4")
+
+[node name="Teleportation" type="Node3D" parent="TeleporterManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.911)
+script = ExtResource("10_bslk4")
+image_filename = "uid://bxx2ruaqcq4g6"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TeleporterManager/Teleportation"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+mesh = ExtResource("12_0t0bb")
+
+[node name="Teleporters" type="Node3D" parent="TeleporterManager/Teleportation"]
+
+[node name="Tele-1" type="Node3D" parent="TeleporterManager/Teleportation/Teleporters" node_paths=PackedStringArray("connected_teleporters", "new_scene", "new_teleporter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.71767)
+script = ExtResource("11_0t0bb")
+teleporter_name = "Tele-1"
+teleporter_position = Vector3(0, 0, -11.1933)
+connected_teleporters = [NodePath("../../../Start/Teleporters/TeleporterSystem"), NodePath("../Tele-2")]
+loads_new_scene = true
+new_scene = NodePath("../../../Start")
+new_teleporter = NodePath("../../../Start/Teleporters/TeleporterSystem")
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
+
+[node name="Tele-2" type="Node3D" parent="TeleporterManager/Teleportation/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.18833, 0, 0)
+script = ExtResource("11_0t0bb")
+teleporter_name = "Tele-2"
+teleporter_position = Vector3(-3.18833, 0, -15.911)
+connected_teleporters = [NodePath("../Tele-3"), NodePath("../Tele-1")]
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
+
+[node name="Tele-3" type="Node3D" parent="TeleporterManager/Teleportation/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.43208)
+script = ExtResource("11_0t0bb")
+teleporter_name = "Tele-3"
+teleporter_position = Vector3(0, 0, -20.3431)
+connected_teleporters = [NodePath("../Tele-4"), NodePath("../Tele-2")]
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
+
+[node name="Tele-4" type="Node3D" parent="TeleporterManager/Teleportation/Teleporters" node_paths=PackedStringArray("connected_teleporters")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68077, 0, 0)
+script = ExtResource("11_0t0bb")
+teleporter_name = "Tele-4"
+teleporter_position = Vector3(3.68077, 0, -15.911)
+connected_teleporters = [NodePath("../Tele-3")]
+metadata/_custom_type_script = "uid://dwpn6phxfx3k8"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TeleporterManager/Teleportation"]
+light_energy = 10.0
+omni_range = 10.0
+
+[node name="WallWhite2" type="MeshInstance3D" parent="TeleporterManager/Teleportation"]
+transform = Transform3D(0.544127, 0, -0.839003, 0, 1, 0, 0.839003, 0, 0.544127, 0.181571, 1.23492, -0.507393)
+mesh = SubResource("BoxMesh_7430m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/Teleportation/WallWhite2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/Teleportation/WallWhite2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dikmn")
+
+[node name="WallBlackTop" type="MeshInstance3D" parent="TeleporterManager/Teleportation"]
+transform = Transform3D(-0.558151, 0, -0.82974, 0, 1, 0, 0.82974, 0, -0.558151, 0.181571, 3.88694, -0.507393)
+mesh = SubResource("BoxMesh_7430m")
+surface_material_override/0 = SubResource("StandardMaterial3D_51ifu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TeleporterManager/Teleportation/WallBlackTop"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleporterManager/Teleportation/WallBlackTop/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dikmn")
 
 [connection signal="pressed" from="DesktopViewContainer/DesktopViewport/CanvasLayer/Control/Button" to="DesktopViewContainer/DesktopViewport/CanvasLayer" method="_toggle_xr_view"]

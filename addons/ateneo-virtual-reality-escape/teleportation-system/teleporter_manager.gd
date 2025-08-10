@@ -46,7 +46,7 @@ signal location_changed(location_name)
 @export var active_controller : XRController3D
 
 var teleport_called : bool
-var initial_teleport : bool = true
+var initial_teleport : bool
 
 var teleporters : Array[Node]
 var scenes : Array[Node]
@@ -56,6 +56,7 @@ func _ready() -> void:
 	_initialize_xr_components()
 	
 	if not Engine.is_editor_hint():
+		initial_teleport = true
 		teleport_called = true
 		if teleport_called and is_instance_valid(current_location):
 			_teleport_player(current_location)
@@ -86,7 +87,6 @@ func _process(delta: float) -> void:
 	if teleport_called and is_instance_valid(pointing_at):
 		if pointing_at.loads_new_scene:
 			_change_scene()
-			teleporters = get_tree().get_nodes_in_group("Teleporters")
 		else:
 			_teleport_player(pointing_at)
 		teleport_called = false
@@ -95,11 +95,6 @@ func _process(delta: float) -> void:
 		_runtime_pointer()
 	
 func _change_scene() -> void:
-	var new_scene = pointing_at.new_scene
-	if new_scene.get_parent(): 
-		new_scene.get_parent().remove_child(new_scene)
-	add_child(new_scene)
-	
 	var new_teleporter = pointing_at.new_teleporter
 	_teleport_player(new_teleporter)
 	
@@ -115,21 +110,11 @@ func _update_teleporters():
 	
 	
 func _set_teleporter_states() -> void: #set which teleporters are enabled or not
-	#if not Engine.is_editor_hint():
-		#print("in set teleporter states: ", current_location, self)
 	if enabled: 
 		if is_instance_valid(current_location):
-			#if not Engine.is_editor_hint():
-				#print("after instance valid: ", current_location, self)
 			for teleporters_a in teleporters:
-				if not Engine.is_editor_hint():
-					print("after instance valid: ", current_location, " ", teleporters_a)
 				if teleporters_a == current_location:
 					teleporters_a.current_teleporter = true
-					if not Engine.is_editor_hint():
-						print("in game: ", teleporters_a)
-					#if Engine.is_editor_hint():
-						#print("in editor: ", teleporters_a)
 				else:
 					teleporters_a.current_teleporter = false
 				if teleporters_a not in current_location.connected_teleporters or not teleporters_a.teleporter_active:
@@ -142,6 +127,8 @@ func _set_teleporter_states() -> void: #set which teleporters are enabled or not
 
 func _teleport_player(location : Teleporter) -> void:
 	# Still unsure about this, will have to confirm later, but it works as expected.
+	
+	
 	print("[AVRE - TeleportManager] Teleported to "+location.teleporter_name+".")
 	if !initial_teleport:
 		_fade_out()
@@ -150,6 +137,14 @@ func _teleport_player(location : Teleporter) -> void:
 	if is_instance_valid(fade_mesh):
 		await get_tree().create_timer(1).timeout
 	#xr_origin.position = location.teleporter_position
+	
+	if location.loads_new_scene:
+		var new_scene = location.get_parent().get_parent()
+		if new_scene.get_parent(): 
+			new_scene.get_parent().remove_child(new_scene)
+		add_child(new_scene)
+		
+	teleporters = get_tree().get_nodes_in_group("Teleporters")
 	
 	# Separate y position from position of x and z axes to preserve height.
 	xr_origin.position.x = location.teleporter_position.x
@@ -166,7 +161,9 @@ func _teleport_player(location : Teleporter) -> void:
 		_teleport_spectator_camera(location)
 	
 	current_location = location
-	print("y tf u aint doing anything ", current_location, " ", location)
+	
+	
+	
 	_fade_in()
 	emit_signal("location_changed", location.teleporter_name)
 	
